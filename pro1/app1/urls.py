@@ -8,4 +8,5 @@ urlpatterns = [
     path('uv/<int:pk>/', updateview),
     path('dv/<int:x>/', deleteview),
     path('scv/', searchview),
+    path('ftv/', filterview),
 ]

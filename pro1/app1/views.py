@@ -42,3 +42,11 @@ def searchview(request):
         print(n)
         obj = Client.objects.filter(name__contains=n)
     return render(request,'app1/show.html', {'obj': obj})
+
+def filterview(request):
+    if request.method=='POST':
+        s = request.POST.get('status')
+        #print(s)
+        obj = Client.objects.filter(status=s)
+        #print(obj)
+    return render(request, 'app1/show.html', {'obj': obj})
