@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Show</title>
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto mt-4 p-5 rounded-5" style="background-color:plum">
+    <h1 class="text-center mb-4" style="color:midnightblue;">Client Details</h1>
+
+    <form class="d-flex mb-3" role="search" action="/a1/scv/" method="post">
+        {% csrf_token %}
+      <input class="form-control me-2" type="search" name="search" placeholder="Enter client name to search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+
+    <table class="table table-striped-columns">
+        <thead>
+            <tr>
+                <th>Client ID</th>
+                <th>Client Name</th>
+                <th>Company</th>
+                <th>E-Mail ID</th>
+                <th>Department</th>
+                <th>Date of Joining</th>
+                <th>Status</th>
+                <th>Project Domain</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in obj %}
+            <tr>
+                <td>{{c.id}}</td>
+                <td>{{c.name}}</td>
+                <td>{{c.company}}</td>
+                <td>{{c.email}}</td>
+                <td>{{c.dept}}</td>
+                <td>{{c.doj}}</td>
+                <td>{{c.status}}</td>
+                <td>{{c.domain}}</td>
+                <td>
+                    <a href="/a1/uv/{{c.id}}/"><button class="btn btn-warning">Update</button></a>
+                    <a href="/a1/dv/{{c.id}}/"><button class="btn btn-danger">Delete</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

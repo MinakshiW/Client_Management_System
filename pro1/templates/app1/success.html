@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Success</title>
+{% endblock %}
+
+{% block content %}
+<div class="container w-50 mx-auto mt-4 p-5 rounded-5" style="background-color:plum">
+    <h1 class="text-center" style="color:midnightblue;">Do ypu want to delete client
+        <span style="color:red"> {{obj.name}} </span>???
+    </h1>
+    <form method="post" class="text-center">
+        {%csrf_token %}
+        <input type="submit" class="btn btn-danger col-2 me-2" value="Yes">
+        <a href="/a1/sv/"><button type="button" class="btn btn-success col-2">No</button></a>
+    </form>
+</div>
+{% endblock %}
