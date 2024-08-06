@@ -14,16 +14,14 @@
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
 
-    <form class="d-flex mb-3 float-end" action="/a1/ftv/" method="post">
-        {% csrf_token %}
-        <input type="radio" class="btn-check" name="status" id="s1" value="Onboarded" autocomplete="off">
-        <label class="btn btn-outline-success me-2" for="s1">Onboarded</label>
 
-        <input type="radio" class="btn-check" name="status" id="s2" autocomplete="off" value="Not Onboarded">
-        <label class="btn btn-outline-danger me-2" for="s2">Not Onboarded</label>
+        <a class="btn btn-outline-success me-auto float-end" href="/a1/ftv/?q=Onboarded">Onboarded</a>
 
-        <button class="btn btn-outline-primary col-2" type="submit">Filter</button>
-    </form>
+
+        <a class="btn btn-outline-danger me-auto float-end" href="/a1/ftv/?q=Not Onboarded" >Not Onboarded</a>
+
+
+
 
     <table class="table table-dark table-striped-columns">
         <thead>
